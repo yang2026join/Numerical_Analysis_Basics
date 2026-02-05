@@ -18,7 +18,7 @@ TOL = 10e-5;
 
 %% Visualize the linear system
 
-[A, b, b1, b2, b3] = finite_difference_elliptic_linear_system(f, a, b, c, d, bc_ay, bc_by, bc_xc, bc_xd, N, M);
+[A, b, b1, b2, b3] = linear_system(f, a, b, c, d, bc_ay, bc_by, bc_xc, bc_xd, N, M);
 
 figure;
 imagesc(A);  colorbar;  title('Matrix A')
@@ -32,7 +32,7 @@ subplot(4,1,4);  imagesc(b3');  colorbar;  title('b_3');  set(gca, 'YTick', []);
 
 %% Apply finite-difference method and visualize the solution
 
-[w, x, y] = finite_difference_elliptic(f, a, b, c, d, bc_ay, bc_by, bc_xc, bc_xd, N, M, maxit, TOL);
+[w, x, y] = solver(f, a, b, c, d, bc_ay, bc_by, bc_xc, bc_xd, N, M, maxit, TOL);
 
 figure;
 imagesc(x, y, w);  colorbar;
@@ -40,3 +40,4 @@ xlabel('x');  ylabel('y');
 title('Steady-state Temperature Distribution');
 axis xy
 axis square
+
