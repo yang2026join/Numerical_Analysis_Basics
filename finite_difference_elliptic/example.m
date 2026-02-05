@@ -2,7 +2,7 @@
 %% Specify the boundary-value problem
 % adapted from Burden book, Chap. 12.1, Ex. 1
 
-f = @(x,y) 0*x+0*y;
+f = @(x,y) 0;
 a = 0;
 b = 0.5;
 c = 0;
@@ -40,4 +40,5 @@ xlabel('x');  ylabel('y');
 title('Steady-state Temperature Distribution');
 axis xy
 axis square
+
 
